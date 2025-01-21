@@ -2,7 +2,7 @@ Elithair Interview
 
 for running the app you need node.js installed on your device 
 
-to install the dependencies you should use commadnd:
+to install the dependencies you should use command:
 ```
   npm i
 ```
