@@ -1,0 +1,88 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Elithair interview APIs",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "securityDefinitions": {
+  },
+  "security": [
+  ],
+  "tags": [
+    {
+      "name": "User"
+    }
+  ],
+  "paths": {
+    "/users/{userId}": {
+      "get": {
+        "summary": "get a user by id",
+        "tags": ["User"],
+        "parameters": [
+          {
+            "in": "path",
+            "type": "string",
+            "name": "userId",
+            "required": true,
+            "default": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/users": {
+      "post": {
+        "tags": ["User"],
+        "summary": "create a user",
+        "description": "",
+        "security": [],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "favoriteGenres": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": ["name", "email"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Will create the user",
+            "examples": {
+              "application/json": {
+                "id": 1,
+                "name": "siamak",
+                "email": "siamak@gmail.com",
+                "favoriteGenres": ["action", "comedy"]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {},
+  "basePath": "",
+  "schemes": ["http"]
+}
